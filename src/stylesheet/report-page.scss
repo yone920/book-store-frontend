@@ -1,0 +1,56 @@
+.report-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    min-height: 40vw;
+
+
+    .report-title {
+        padding: 40px 0;
+        // align-items: center;
+        // justify-content: center;
+        // text-align: center;
+
+    }
+
+    .report-wrapper {
+        display: flex;
+
+
+        .report-total {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            
+            
+            .ordered-books {
+                margin-bottom: 50px;
+                 p {
+                     padding-left: 20px;
+                 }
+            }
+
+            .report-total-paid {
+
+                p {
+                    padding-left: 20px;
+                }
+            }
+        }
+        .report-shipping {
+            flex: 1;
+            
+            p {
+                padding-left: 20px;
+            }
+        }
+    }
+    
+    .report-back-to-home {
+        
+        margin-top: 50px;
+    }
+}

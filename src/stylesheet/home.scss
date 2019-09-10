@@ -1,0 +1,108 @@
+$red: #5E5E5E;
+$brown: #5E5E5E;
+$whitey: #f0f0f0;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+// html, body, #root {
+//     // position: fixed;
+//     width: 100vw;
+//     // bottom: 0;
+// }
+
+
+.home-div {
+    background-color: #F5F5F5;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+   
+    padding-bottom: 100px;
+    
+    .home-wrapper div {
+    }
+    .home-wrapper {
+        min-height:100%;
+        position:relative;
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        // align-items: center;
+        margin: auto;
+        
+        .home-categories {
+            padding-top: 50px;
+            flex: 1; 
+
+            .home-sidebar {
+
+                .menu {
+                    padding-bottom: 10px;
+                    a {
+                        font-size: 14px;
+                        color: $brown;
+                        position: relative;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        padding-bottom: 8px;
+                        svg {
+                            margin-right: 10px;
+                            } 
+                        &:before,
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                bottom: 2px;
+                                left: 0; right: 0;
+                                height: 2px;
+                                background-color: $red;
+                            }
+                            &:before {
+                                opacity: 0;
+                                transform: translateY(- $distance);
+                                transition: transform 0s $easeOutBack, opacity 0s;
+                            }
+                            &:after {
+                                opacity: 0;
+                                transform: translateY($distance/2);
+                                transition: transform $duration $easeOutBack, opacity $duration;
+                            }
+                            &:hover,
+                            &:focus {
+                                &:before,
+                                &:after {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                                &:before {
+                                    transition: transform $duration $easeOutBack, opacity $duration;
+                                }
+                                &:after {
+                                    transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+                                }
+                            }
+                    }
+                }
+            }
+        } 
+
+        .featured-products {
+            display: flex;
+            flex-direction: column;
+            flex: 4;
+
+            .site-name {
+                padding-left: 20px;
+                margin-bottom: 40px;
+            }
+
+            .home-products {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

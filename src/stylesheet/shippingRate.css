@@ -1,0 +1,92 @@
+.checkout-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 100px;
+  min-height: 42vw;
+  width: 60%;
+  margin: auto;
+}
+
+.checkout-container .checkout-button {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 40%;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.checkout-container .checkout-button button, .checkout-container .checkout-button input {
+  background-color: #34414e;
+  color: white;
+  width: 100%;
+  height: 50px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.08333rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px 105px;
+  -webkit-transition: opacity 0.2s ease-in-out 0s;
+  transition: opacity 0.2s ease-in-out 0s;
+}
+
+.checkout-container .order-summary-checkout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  margin-top: -1px;
+  padding: 54px 15px 55px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e5f1;
+  -o-border-image: initial;
+     border-image: initial;
+}
+
+.checkout-container .shipping-options {
+  background-color: #45a049;
+  padding: 90px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  margin-top: -1px;
+  padding: 54px 15px 55px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e5f1;
+  -o-border-image: initial;
+     border-image: initial;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+/*# sourceMappingURL=shippingRate.css.map */

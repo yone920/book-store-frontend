@@ -1,0 +1,51 @@
+.book-login {
+
+    // background-color: yellow;
+    padding: 50px;
+    min-height: 48vw;
+
+
+    .login-wrapper {
+        width: 23%;
+        margin: auto;
+        margin-top: 60px;
+        padding: 60px 50px 160px 50px;
+
+        border: 1px solid rgba(60, 60, 60, 0.288);
+        border-radius: 5px;
+        //  opacity: 3;
+
+        .no-account {
+            margin-top: 30px;
+
+        }
+        .login-header {
+           margin-bottom: 30px;
+        }
+
+        form {
+            // background-color: orange;
+            display: flex;
+            flex-direction: column;
+            
+            input[type=submit] {
+                margin-top: 50px;
+            }
+
+            input[type=submit]:hover {
+                background-color: #5e5d5d;
+                color: #fff;
+            }
+
+            input {
+                margin-bottom: 30px;
+                border: 0.5px solid rgba(60, 60, 60, 0.288);
+                padding: 10px;
+                
+
+                }
+            
+            
+        }
+    }
+}

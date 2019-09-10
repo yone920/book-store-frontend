@@ -1,0 +1,64 @@
+.report-container {
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+  min-height: 40vw;
+}
+
+.report-container .report-title {
+  padding: 40px 0;
+}
+
+.report-container .report-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.report-container .report-wrapper .report-total {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.report-container .report-wrapper .report-total .ordered-books {
+  margin-bottom: 50px;
+}
+
+.report-container .report-wrapper .report-total .ordered-books p {
+  padding-left: 20px;
+}
+
+.report-container .report-wrapper .report-total .report-total-paid p {
+  padding-left: 20px;
+}
+
+.report-container .report-wrapper .report-shipping {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.report-container .report-wrapper .report-shipping p {
+  padding-left: 20px;
+}
+
+.report-container .report-back-to-home {
+  margin-top: 50px;
+}
+/*# sourceMappingURL=report-page.css.map */

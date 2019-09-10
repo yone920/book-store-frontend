@@ -1,0 +1,117 @@
+$red: #5E5E5E;
+$brown: #5E5E5E;
+$whitey: #f0f0f0;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+.navbar2 {
+  background-color: #5E5E5E;
+
+  .top-nav-ul {
+    width: 70%;
+    margin: auto;
+
+    ul {
+
+      .signout {
+        float: right;
+      }
+      .cart-icon {
+        float: right;
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+
+  .home-categories-navbar {
+    background-color: #d2d1cd;
+    padding: 30px;
+    // width: 100%;
+    // margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    .menu {
+      width: 9em;
+      
+      a {
+
+        svg {
+          display: none;
+        }
+        
+        font-size: 12px;
+                        color: $brown;
+                        position: relative;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        padding-bottom: 8px;
+
+                        &:before,
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                bottom: 2px;
+                                left: 0; right: 0;
+                                height: 2px;
+                                background-color: $red;
+                            }
+                            &:before {
+                                opacity: 0;
+                                transform: translateY(- $distance);
+                                transition: transform 0s $easeOutBack, opacity 0s;
+                            }
+                            &:after {
+                                opacity: 0;
+                                transform: translateY($distance/2);
+                                transition: transform $duration $easeOutBack, opacity $duration;
+                            }
+                            &:hover,
+                            &:focus {
+                                &:before,
+                                &:after {
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                                &:before {
+                                    transition: transform $duration $easeOutBack, opacity $duration;
+                                }
+                                &:after {
+                                    transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+                                }
+                            }
+      }
+
+    }
+
+}
+}
