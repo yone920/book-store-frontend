@@ -2,6 +2,10 @@
   "name": "frontend-marketplace",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.10.2",
+    "node": "12.8.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
