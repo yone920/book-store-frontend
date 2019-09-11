@@ -30,9 +30,7 @@ class CategoryPage extends Component {
     }
     
     
-    render() {  
-              console.log(this.props);
-              
+    render() {                
         return (
             <div className="featured-products category-page">
             <div className="category-header">

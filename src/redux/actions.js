@@ -1,6 +1,6 @@
 export const userPostFetch = user => {
     return dispatch => {
-        return fetch('https://book-store-backend.herokuapp.com/signup', {
+        return fetch('http://localhost:3000/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json',
@@ -27,7 +27,7 @@ const loginUser = userObj => ({
 
 export const userLoginFetch = user => {    
     return dispatch => {
-        return fetch('https://book-store-backend.herokuapp.com/login', {
+        return fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type':'application/json',
@@ -51,16 +51,13 @@ export const getProfileFetch = () => {
     return dispatch => {
         const token = localStorage.token
         if (token) {
-            fetch('https://book-store-backend.herokuapp.com/profile', {
+            fetch('http://localhost:3000/profile', {
                 headers: {
                     "Authorization": token
                 }
             })
             .then(res => res.json())
-            .then(profileData => {
-                // debugger
-                // console.log(profileData);
-                
+            .then(profileData => {                
                 dispatch(loginUser(profileData))
             })
         }
@@ -81,7 +78,7 @@ export const logoutUser = () => ({
 
 // Fetch categories and set the state
 export const fetchCategories = () => dispatch => {
-    fetch('https://book-store-backend.herokuapp.com/categories')
+    fetch('http://localhost:3000/categories')
         .then(res => res.json())
         .then(categoriesJson => {
             dispatch({ type: "GET_CURRENT_CATEGORIES", categories: categoriesJson})
@@ -92,7 +89,7 @@ export const fetchCategories = () => dispatch => {
 
 // fetch all products
 export const fetchProducts = () => dispatch => {
-    fetch('https://book-store-backend.herokuapp.com/products')
+    fetch('http://localhost:3000/products')
         .then(res => res.json())
         .then(productsJson => {
             dispatch({ type: "GET_CURRENT_PRODUCTS", products: productsJson})
@@ -103,8 +100,7 @@ export const fetchProducts = () => dispatch => {
 
 // get the product id and fetch for the product
 export const grabSingleProduct = (product_id) => dispatch => {
-    console.log(product_id);
-    fetch(`https://book-store-backend.herokuapp.com/${product_id}`)
+    fetch(`http://localhost:3000/${product_id}`)
     .then(res => res.json())
     .then(ProductJson => {
         
@@ -119,8 +115,7 @@ export const grabSingleProduct = (product_id) => dispatch => {
 // get the id from router and fetch for a Category
 export const grabACategory = (category_id) => dispatch => {
     // dispatch({ type: "GET_SINGLE_CATEGORY", category: singleCategory })
-    console.log(category_id);
-    fetch(`https://book-store-backend.herokuapp.com/categories/${category_id}`)
+    fetch(`http://localhost:3000/categories/${category_id}`)
         .then(res => res.json())
         .then(categoryJson => {
             
@@ -132,10 +127,8 @@ export const grabACategory = (category_id) => dispatch => {
 
 
 // If there is a current user and the curent order is !null fetch for the order and set state
-export const fetchCart = current_user => dispatch => {
-   console.log(current_user)
-   
-    fetch('https://book-store-backend.herokuapp.com/products')
+export const fetchCart = current_user => dispatch => {   
+    fetch('http://localhost:3000/products')
         .then(res => res.json())
         .then(productsJson => {
             dispatch({ type: "GET_CURRENT_PRODUCTS", products: productsJson})
@@ -153,14 +146,10 @@ export const addToCart = data => dispatch => {
     const userId = data.user.id  
     const currentOrder = data.user.current_order
     const productId = data.product.id
-    let quantity = data.quantity
-
-    console.log(data);
-    
+    let quantity = data.quantity        
 
     if (currentOrder === null) {
         // Create new Order
-        console.log("current order ",  currentOrder);
         const token = localStorage.token
 
 
@@ -174,15 +163,14 @@ export const addToCart = data => dispatch => {
             body: JSON.stringify({user_id: userId, product_id: productId, quantity: quantity})
         }
         
-        fetch("https://book-store-backend.herokuapp.com/orders/neworder", config4)
+        fetch("http://localhost:3000/orders/neworder", config4)
             .then(rsp => rsp.json())
             .then(data => {
-                const order = {...data.order, order_items: data.order_items}
+                // const order = {...data.order, order_items: data.order_items}
                 // dispatch({ type: "NEW_ORDER", cart: order}) 
                 dispatch({ type: "UPDATE_CURRENT_USER", current_site_user: data}) 
             }) 
     } else {
-        console.log("current order  else",  currentOrder);
         const token = localStorage.token
 
             let config3 = {
@@ -195,7 +183,7 @@ export const addToCart = data => dispatch => {
                 body: JSON.stringify({order_id: currentOrder, product_id: productId, quantity: quantity})
             }
             
-            fetch("https://book-store-backend.herokuapp.com/order_items", config3)
+            fetch("http://localhost:3000/order_items", config3)
                 .then(rsp => rsp.json())
                 .then(data => {
                     // const order = {...data.order, order_items: data.order_items}
@@ -220,10 +208,9 @@ export const addToCart = data => dispatch => {
             }
         }
         
-        fetch(`https://book-store-backend.herokuapp.com/order_items/${data}`, config4)
+        fetch(`http://localhost:3000/order_items/${data}`, config4)
         .then(rsp => rsp.json())
         .then(data => {
-            console.log(data);
             dispatch({ type: "UPDATE_CURRENT_USER", current_site_user: data}) 
             // const order = {...data.order, order_items: data.order_items}
             // dispatch({ type: "NEW_ORDER", cart: data}) 
@@ -234,7 +221,6 @@ export const addToCart = data => dispatch => {
     
     
     export const addShippingAddressToCurrentOrder = data => dispatch => {
-        console.log(data);
         const token = localStorage.token
 
         let config6 = {
@@ -251,18 +237,15 @@ export const addToCart = data => dispatch => {
                                                 zip: data.zip })
         }
         
-        fetch(`https://book-store-backend.herokuapp.com/orders/${data.current_order}`, config6)
+        fetch(`http://localhost:3000/orders/${data.current_order}`, config6)
             .then(rsp => rsp.json())
             .then(data => {
-                console.log(data);
                 dispatch({ type: "UPDATE_CURRENT_USER", current_site_user: data})
             }) 
     }
         
     
-    export const updateShippingRate = data => dispatch => {
-        console.log(data);
-        
+    export const updateShippingRate = data => dispatch => {        
         const token = localStorage.token
 
         let config6 = {
@@ -275,10 +258,9 @@ export const addToCart = data => dispatch => {
             body: JSON.stringify({sh_rate: data.value })
         }
         
-        fetch(`https://book-store-backend.herokuapp.com/orders/shipping/${data.current_order}`, config6)
+        fetch(`http://localhost:3000/orders/shipping/${data.current_order}`, config6)
             .then(rsp => rsp.json())
             .then(data => {
-                console.log(data);
                 dispatch({ type: "UPDATE_CURRENT_USER", current_site_user: data})
             }) 
     }
@@ -286,7 +268,6 @@ export const addToCart = data => dispatch => {
 
 
     export const changeUserCurrentOrderAttToNull = data => dispatch => {
-        console.log(data);
         const token = localStorage.token
 
 
@@ -300,10 +281,9 @@ export const addToCart = data => dispatch => {
             body: JSON.stringify()
         }
         
-        fetch(`https://book-store-backend.herokuapp.com/users/order_complete/${data}`, config7)
+        fetch(`http://localhost:3000/users/order_complete/${data}`, config7)
             .then(rsp => rsp.json())
             .then(data => {
-                console.log('Once we\'ve checked out: ', data);
                 dispatch({ type: "UPDATE_CURRENT_USER", current_site_user: data})
             }) 
 

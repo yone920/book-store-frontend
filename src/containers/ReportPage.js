@@ -63,9 +63,7 @@ class ReportPage extends Component {
         this.props.changeUserCurrentOrderAttToNull(this.props.user.id)
     }
 
-    render() {
-        console.log(this.current_order());
-        
+    render() {        
         return (
             <div className="report-container">
                 <div className="report-title">

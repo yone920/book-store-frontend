@@ -25,15 +25,12 @@ class ShippingAddress extends Component {
         event.preventDefault()
         if (this.props.user.current_order) {
             this.props.addShippingAddressToCurrentOrder({...this.state, current_order: this.props.user.current_order})
-            console.log(this.state);
         }
 
         this.props.history.push('/checkout')
     }
 
-    render() {
-        console.log(this.props);
-        
+    render() {        
         return (
                 <div className="shipping-address">
                     <div className="row">

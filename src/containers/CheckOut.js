@@ -42,7 +42,6 @@ class CheckOut extends Component {
     }
 
     render() {
-        console.log(this.state.value);
         // const totalPrice = this.current_order().total_price + parseInt(this.state.value)
         return (
             <div className="checkout-container">

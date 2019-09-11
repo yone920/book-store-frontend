@@ -14,9 +14,7 @@ class CartItem extends Component {
         return `../img/${parseInt(this.props.item.product.main_image)}.jpg`
     }
 
-    render() {    
-        console.log(this.props)
-            
+    render() {                
         return (
             <Fragment>
                 <div key={this.props.item.id} className="cart-item">

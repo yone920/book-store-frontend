@@ -22,12 +22,12 @@ class ProductPage extends Component {
         this.setState({quantity: event.target.value})
     }
 
-    handleSubmit = event => {
-        // console.log(this.state);
-        
+    handleSubmit = event => {        
         event.preventDefault()
         localStorage.token ?  this.props.addToCart({...this.state, user: this.props.user, product: this.props.product}) : this.props.history.push('/login');
-        this.state.add_to_cart = true
+        // this.state.add_to_cart = true
+        this.setState({add_to_cart: true})
+
     }
 
     returnImage = () => {
@@ -71,9 +71,7 @@ class ProductPage extends Component {
     null;    
 }
 
-    render() {
-            console.log(this.props);
-            
+    render() {                    
         return (
             <div className="product-page-wrapper">
                 <div className="product-page-container">

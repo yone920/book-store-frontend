@@ -32,9 +32,7 @@ class App extends Component {
     }
 }
 
-  render() {    
-    // console.log(this.props.current_user);
-    
+  render() {        
     return (
         <Fragment>
 

@@ -22,9 +22,7 @@ class ProductCard extends Component {
     }
 
     render() {
-        const image_name = parseInt(this.props.product.main_image)
-        console.log(image_name);
-
+        // const image_name = parseInt(this.props.product.main_image)
         return (
                 <article className="card" >
                     <Link href=" " onClick={this.handleClick}>

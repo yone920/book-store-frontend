@@ -32,9 +32,7 @@ class Home extends Component {
 
     // }
     
-    render() {     
-        console.log(this.props.current_site_user.products);
-           
+    render() {                
         return (
             <div className="home-div">
                

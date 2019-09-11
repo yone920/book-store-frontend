@@ -12,7 +12,6 @@ class Cart extends Component {
     current_order() {
         if (this.props.user.orders) {
             return this.props.user.orders.find(order => { 
-                console.log(order)
                 return this.props.user.current_order === order.id
             })
         }
@@ -40,7 +39,6 @@ class Cart extends Component {
         // const order = this.current_order()
         // debugger
         // const order_items = order.order_items
-        // console.log(order_items)
         return (
             <div className="cart-container">
                 <div className="cart-section">

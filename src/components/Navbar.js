@@ -67,9 +67,7 @@ class Navbar extends Component {
 
 
     total_qty = () => {
-        if (this.current_order()) {
-            console.log(this.current_order());
-            
+        if (this.current_order()) {            
             return this.current_order().total_qty
         }
     }
@@ -83,11 +81,14 @@ class Navbar extends Component {
             <div className="navbar2">
                 <div className="top-nav-ul">
                     <ul>
-                        <li><Link onClick={this.handleHomeClick}>Home</Link></li>
+                        {/* <li><Link onClick={this.handleHomeClick}>Home</Link></li> */}
+                        <li><Link to="/">Home</Link></li>
                         {this.loginButton()}
                         {this.signUpButton()}
                         {this.props.current_site_user.name ? <li><Link  className="username" href=" ">Welcome {this.props.current_site_user.name}</Link></li> : null }
-                        <li className="cart-icon"><Link className=""  onClick={this.handleCartClick}> <FontAwesomeIcon icon="shopping-cart"/> {this.total_qty()}</Link></li>
+                        <li className="cart-icon"><Link to="/cart" className=""> <FontAwesomeIcon icon="shopping-cart"/> {this.total_qty()}</Link></li>
+                        {/* <li className="cart-icon"><Link className=""  onClick={this.handleCartClick}> <FontAwesomeIcon icon="shopping-cart"/> {this.total_qty()}</Link></li> */}
+
 
                         {this.signOutButton()}
                     </ul>
